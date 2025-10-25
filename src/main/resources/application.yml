@@ -1,0 +1,12 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: estadisticas-service
+
+services:
+  proyectos: http://localhost:8084/api/proyectos
+  epicas: http://localhost:8083/api/epicas
+  issues: http://localhost:8082/api/issues
+  usuarios: http://localhost:8085/api/usuario
