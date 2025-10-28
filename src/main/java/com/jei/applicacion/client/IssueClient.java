@@ -1,9 +1,11 @@
 package com.jei.applicacion.client;
 
 import com.jei.applicacion.client.dto.IssueResponseDto;
+import com.jei.applicacion.client.dto.ProyectoResponseDto;
 import com.jei.config.FeignSecurityConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -14,5 +16,5 @@ import java.util.List;
 )
 public interface IssueClient {
     @GetMapping
-    List<IssueResponseDto> listarTodos();
+    List<IssueResponseDto> listarPorDepartamento(@RequestParam("departamento") String departamento);;
 }

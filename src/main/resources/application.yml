@@ -2,11 +2,23 @@ server:
   port: 8086
 
 spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowed-origins:
+                  - "http://localhost:3000"
+                allowed-methods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - OPTIONS
+                allowed-headers:
+                  - "*"
+                allow-credentials: true
   application:
     name: estadisticas-service
-
-services:
-  proyectos: http://localhost:8084/api/proyectos
-  epicas: http://localhost:8083/api/epicas
-  issues: http://localhost:8082/api/issues
-  usuarios: http://localhost:8085/api/usuario
