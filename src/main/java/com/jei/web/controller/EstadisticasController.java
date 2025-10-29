@@ -27,7 +27,6 @@ public class EstadisticasController {
         String userRole = "ADMIN";
         String userDepartamento = "COMERCIAL";
 
-        // 🔐 Obtener datos desde el token JWT (si existe)
         if (auth != null && auth.getPrincipal() != null) {
             Object principal = auth.getPrincipal();
             if (principal instanceof Jwt jwt) {
